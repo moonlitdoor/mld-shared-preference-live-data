@@ -19,7 +19,7 @@ deploy:
     secure: sLkNqRCU2DNfY0SyzKrLlTUwZXy6wnCKxbbJb9oZ7jYUjF7ZljviHOYuyz9V8O7eTiASqfZdQHtwLO1N306PEY4iOiPrKsuAL/P0Rd6Xe5spd6qgbEt+L3RqqJwLZ8u4EtxKr8/liS7TiMGJTT0cxEVpxXZ/564Jr1c5aXEx4eB35OHsbfaArQdYvyhXdvIjz6obz8cMna2qzRMGaa6sr8L/gVoH2yZVgydMI4QddoXQiPxGgGMLD456UVnouwIL5VKHVGH3EB+TzHOf59vLS0SlcCUfsoTRu4puw+Ldlc4W/6FEhfNv8M2qnqPDTBU8koEJc2cr4lL9WrnWBf7jVvUsbWupxheAl8zif6AK4eQLIFhH+JdWne2Sx0NCHqNz6bZYNK/AIdydT4LoYFRYjkAH6i821/DwMDq9nqTmVwz9x0InUbMTzgtYRXXUNodealyqAZANQsRdGyKnjbRlneXlT7DSTRIIYFyFVCX2hs2p+z2jfc8ywuegc9zkINtWOFUzl4Rsp0+1mltnyhLB8obo2qgxO1Kt8CTJLWnsXfM0RVlHlVZ00DY7o+eXNghQnFsHJcbQ8JwDTTIYE+xK3pdnrf3EKJEQwI0oDaEk/mt4G+VR2O8kmSMzURM10QsQCYdlCquulCUeR9db8/d/vQ+SgsuNsVTouRE6IfuOKbU=
   skip_cleanup: true
   file_glob: true
-  file: shard-preference-live-data/build/outputs/aar/shared-preference-live-data-*-release.aar
+  file: shared-preference-live-data/build/outputs/aar/shared-preference-live-data-*-release.aar
   on:
     tags: true
     repo: moonlitdoor/mld-shared-preference-live-data
