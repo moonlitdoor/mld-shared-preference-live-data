@@ -1,5 +1,6 @@
 apply plugin: "com.moonlitdoor.git-version"
 apply plugin: 'com.android.library'
+apply plugin: "kotlin-android"
 apply plugin: "maven-publish"
 
 project.ext.archivesBaseName = project.name + "-" + gitVersion
@@ -25,6 +26,7 @@ android {
 }
 
 dependencies {
+  implementation "androidx.lifecycle:lifecycle-livedata:2.0.0"
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71"
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -36,6 +38,7 @@ publishing {
     maven(MavenPublication) {
       artifactId = project.name
       version = gitVersion
+      artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
     }
   }
 }
