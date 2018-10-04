@@ -1,9 +1,27 @@
-language: java
-jdk: oraclejdk8
+language: android
+android:
+  components:
+  - tools
+  - platform-tools
+  - tools
 git:
   depth: false
 branches:
   only:
-  - master
-  - "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}(-[rR][cC][0-9]{1,4})?$/"
+    - master
+    - "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}(-[rR][cC][0-9]{1,4})?$/"
 script: "./gradlew build"
+deploy:
+  provider: releases
+  api_key:
+    secure: sLkNqRCU2DNfY0SyzKrLlTUwZXy6wnCKxbbJb9oZ7jYUjF7ZljviHOYuyz9V8O7eTiASqfZdQHtwLO1N306PEY4iOiPrKsuAL/P0Rd6Xe5spd6qgbEt+L3RqqJwLZ8u4EtxKr8/liS7TiMGJTT0cxEVpxXZ/564Jr1c5aXEx4eB35OHsbfaArQdYvyhXdvIjz6obz8cMna2qzRMGaa6sr8L/gVoH2yZVgydMI4QddoXQiPxGgGMLD456UVnouwIL5VKHVGH3EB+TzHOf59vLS0SlcCUfsoTRu4puw+Ldlc4W/6FEhfNv8M2qnqPDTBU8koEJc2cr4lL9WrnWBf7jVvUsbWupxheAl8zif6AK4eQLIFhH+JdWne2Sx0NCHqNz6bZYNK/AIdydT4LoYFRYjkAH6i821/DwMDq9nqTmVwz9x0InUbMTzgtYRXXUNodealyqAZANQsRdGyKnjbRlneXlT7DSTRIIYFyFVCX2hs2p+z2jfc8ywuegc9zkINtWOFUzl4Rsp0+1mltnyhLB8obo2qgxO1Kt8CTJLWnsXfM0RVlHlVZ00DY7o+eXNghQnFsHJcbQ8JwDTTIYE+xK3pdnrf3EKJEQwI0oDaEk/mt4G+VR2O8kmSMzURM10QsQCYdlCquulCUeR9db8/d/vQ+SgsuNsVTouRE6IfuOKbU=
+  skip_cleanup: true
+  file_glob: true
+  file: shard-preference-live-data/build/outputs/aar/shared-preference-live-data-*-release.aar
+  on:
+    tags: true
+    repo: moonlitdoor/mld-shared-preference-live-data
+notifications:
+  slack:
+    rooms:
+      - secure: Kg0BHkjHSWa18mTv2Y58Q/pNy32RfPqd/SbKO4HgRRnEvN6LG3aw1+7XxLiOXqFTjaeLG5EMkrRfVXEksehjlJT/B/9TRPzOHacp4l1cfzDRnaCfe/KZXBnblbYoXRdNRFEuU0bvMyup/ukUWRlYMofyqTR4iPNeK2qV2plnj1Drj+qJTwivHFV5M0YwvrPoYu3S1PbAlXJZ/X92H3bMutNtAVuh2oiISQJpFKKHTAp9iD9CWMcNmu8VYRNH/wv8emsv4te7Xvwsjb7stFkobRJKm8XdMsfp8jYN8FGnsAB1e71Di8XRdnlBMG++FFqkDYfqNt18PDgwLVX0noKbPp28fD+EiFderznMBY14uYUzmmJB3KSqgUll8SITuNlFT/veEqDLdWjg/rLNtsBUiKGqlVw8wR0zvYN+sResaJxsxfBDNTdqdCY8flGRQXU0sdbQK9HQw7labf54d3A5Pw5rjraweuOk/NpuSdeadKXbI3fEU23qGts4BDhUjP03Q836+cBguaRov9mAAhDdwgDWgD/mKkCH7OuYl0vUuIxwvJUce4M3tApWfw4gvkHJUnH1XmnagwXw2UOny2mtQF6EB7GwXEFxyUQkxel98d0EaduacB8d5n6zxeihvqAE1YEKPL//SVpK7IXwsUnQjfLnbz48yOO1TBZldF9Ww1U=

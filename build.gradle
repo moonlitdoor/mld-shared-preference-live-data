@@ -12,6 +12,7 @@ buildscript {
 }
 
 allprojects {
+    group = "com.moonlitdoor.shared-preference-live-data"
     repositories {
         google()
         jcenter()
