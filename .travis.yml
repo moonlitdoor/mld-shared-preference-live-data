@@ -1,0 +1,9 @@
+language: java
+jdk: oraclejdk8
+git:
+  depth: false
+branches:
+  only:
+  - master
+  - "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}(-[rR][cC][0-9]{1,4})?$/"
+script: "./gradlew build"
