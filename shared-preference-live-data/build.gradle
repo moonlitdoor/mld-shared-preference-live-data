@@ -10,7 +10,7 @@ android {
   defaultConfig {
     minSdkVersion 14
     targetSdkVersion 28
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
     release {
@@ -21,6 +21,13 @@ android {
     warningsAsErrors true
     abortOnError true
   }
+  testOptions {
+    execution "ANDROID_TEST_ORCHESTRATOR"
+  }
+}
+
+repositories {
+  maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
 
 dependencies {
@@ -29,9 +36,12 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71"
 
   testImplementation "junit:junit:4.12"
+  testImplementation "com.android.support.test.espresso:espresso-core:3.1.0-beta01"
+  testImplementation "org.robolectric:robolectric:4.0-alpha-4-SNAPSHOT"
 
-  androidTestImplementation "com.android.support.test:runner:1.0.2"
-  androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
+  androidTestImplementation "androidx.test:runner:1.1.0-beta01"
+  androidTestImplementation "androidx.test:rules:1.1.0-beta01"
+  androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0-beta01"
 }
 
 publishing {

@@ -1,1 +1,2 @@
 include ':shared-preference-live-data'
+enableFeaturePreview('STABLE_PUBLISHING')
