@@ -28,6 +28,10 @@ android {
   }
 }
 
+tasks.matching {it instanceof Test}.all {
+  testLogging.events = ["failed", "passed", "skipped"]
+}
+
 repositories {
   maven {url "https://oss.sonatype.org/content/repositories/snapshots"}
 }
@@ -63,7 +67,6 @@ task javadocAar(type: Jar) {
   from "${project.projectDir}/build/javadoc"
   classifier "javadoc"
   version = gitVersion
-  extension = "aar"
 }
 
 publishing {
@@ -73,7 +76,7 @@ publishing {
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
       artifact "build/libs/" + archivesBaseName + "-sources.aar"
-      artifact "build/libs/" + archivesBaseName + "-javadoc.aar"
+      artifact "build/libs/" + archivesBaseName + "-javadoc.jar"
     }
   }
   repositories {
