@@ -53,6 +53,9 @@ publishing {
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
     }
   }
+  repositories {
+    maven {url = "build/repo"}
+  }
 }
 
 bintray {
@@ -60,13 +63,24 @@ bintray {
   key = "$bintray_api_key"
   publications = ["maven"]
   pkg {
+//    publish = true
     repo = "android"
     userOrg = "moonlitdoor"
     name = group
     licenses = ["MIT"]
+    labels = ["Android", "LiveData", "Shared Preferences"]
+    websiteUrl = "https://github.com/moonlitdoor/mld-shared-preference-live-data"
     vcsUrl = "https://github.com/moonlitdoor/mld-shared-preference-live-data"
+    issueTrackerUrl = "https://github.com/moonlitdoor/mld-shared-preference-live-data/issues"
+    githubRepo = "moonlitdoor/mld-shared-preference-live-data"
     version {
       name = gitVersion
+//      mavenCentralSync {
+//        sync = true //[Default: true] Determines whether to sync the version to Maven Central.
+//        user = 'userToken' //OSS user token: mandatory
+//        password = 'paasword' //OSS user password: mandatory
+//        close = '1' //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
+//      }
     }
   }
 }
