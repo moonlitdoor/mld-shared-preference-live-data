@@ -71,11 +71,19 @@ task javadocAar(type: Jar) {
 
 publishing {
   publications {
-    maven(MavenPublication) {
+    library(MavenPublication) {
       artifactId = project.name
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
+    }
+    sources(MavenPublication) {
+      artifactId = project.name
+      version = gitVersion
       artifact "build/libs/" + archivesBaseName + "-sources.aar"
+    }
+    javadoc(MavenPublication) {
+      artifactId = project.name
+      version = gitVersion
       artifact "build/libs/" + archivesBaseName + "-javadoc.jar"
     }
   }
@@ -87,7 +95,7 @@ publishing {
 bintray {
   user = "$bintray_username"
   key = "$bintray_api_key"
-  publications = ["maven"]
+  publications = ["library", "sources", "javadoc"]
   pkg {
 //    publish = true
     repo = "android"
