@@ -10,11 +10,15 @@ git:
   depth: false
 branches:
   only:
-    - master
-    - "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}(-[rR][cC][0-9]{1,4})?$/"
+  - master
+  - "/^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}(-[rR][cC][0-9]{1,4})?$/"
 script: "./gradlew build"
+env:
+  global:
+  - secure: Ik6N0ETiR6MVq9IBKVlAEOMmPFar6/9A1X9eZnzTv5C51CbCHdmPcTXNPK7aZvK5ym5nUwblwkRZYefCi/L3DSL1xlXjiHYlt/tAPzszsTkJbarjYep9cDiFyVQs7uvpO9YBx+4BcQOYwmxgLNlu6Nvfl4ve+IFHNAPDysq8hPgaXVwYkVK5Lk2SLADQGMMsJ2R+cDiQjaPt1dGBFQs/+4+H5nILfqR9QImZzFw7xIyHlVa9T47kEy2fzM5BoPvvPHR07fgKc1v+Qpvrclnn7cacNK6uV7nklTehU7mwITdquDYeGP/tIRK4tbuyU2Esd7dg9y36l4nmllVzBQ/2j+PvF4sd8LzaIpGx0+0hU27SzyfhzcplDDXkc/9KzY9+aPy5RCZ65wFLcKlCWxNlsmOr5dqFc+UPqarb9tF8s6Pe9vY5c4bFQjBtk5X6etfe9qid30YB4qr/I2q4+LNbnjW2nXrAZdhKYYZZMbViD1xyKF5hqjkdzWnhPaUiSIEXcROY9IXLMV5EaffJVNUBKowkdp6QaypGun/JIqGmIYJ+8QU7jIWA9eDxu0CNw9sZ4PkwgdUr19oM44SOXb5s/wCN9JWZ+Fs9Al85/dEihxkoJkMRYBymxVW96lNtQc0pLIR1071JdcVx/ULs5I9xD++mVVCbXPGpEjafPnY/dOY=
+  - secure: uCZn/zJM6DtW69SBGm48zf5oudDvTbGbdAYaMU0kjeHd9oRJIr75USeHTXd0mIWpLRz5Zr/mS88Ykdzol47caEHmdNQ2iPq972ubbTuVvFbtGwe6pX3AB26ynvAbYUIb86njUH69IzSi7s6z2j6ll1uW/zN/Y7ngvKoei5183GQOyj0Cnr+yDERTU9iq1UHMVSrk8Jvm34v3bPq45jg3VGjwDvL+XaMNM1Moh0ETYI77F2Wvj060WI32U/TPKcSL0M+FYEhjVRf9W6DOjqfjeUjR5HcrCuibyXF43Ms9DZ7CQCMbu612ukRqxFx3abcyeadVg7OB1XCJfyJRO05rrhRFYC6x4TNsrNwkiKWfsNXbr+keFYREOeo+e3FN1BZT/S1UPgpcUBDdRBYZDVe01/G+dFGs05YDPFDtg5PajJAn/sENnpf3mwDaVTRfbWTXrEmfioodPU7TigOhAS9GIGZs/77Q8NDZutdBtxb/DWH+9MPraXKU8xahqz2f1PHDGu3v/2aVyiWCAZB/+Ogav0hdVlBpWKgCyHceBWHzQxt0KazHwzOlpaA+xqlfTa/vHu+xUrSVzVkHnk7x0NTGfze8wTYBFJSJa0i7WfULV7+GRkFTYkdgEYZve3sWKx0ktbGgepj80tkq/QcoOA75CR3edrJp1qbmMdiw3xw8ymg=
 deploy:
-  provider: releases
+- provider: releases
   api_key:
     secure: sLkNqRCU2DNfY0SyzKrLlTUwZXy6wnCKxbbJb9oZ7jYUjF7ZljviHOYuyz9V8O7eTiASqfZdQHtwLO1N306PEY4iOiPrKsuAL/P0Rd6Xe5spd6qgbEt+L3RqqJwLZ8u4EtxKr8/liS7TiMGJTT0cxEVpxXZ/564Jr1c5aXEx4eB35OHsbfaArQdYvyhXdvIjz6obz8cMna2qzRMGaa6sr8L/gVoH2yZVgydMI4QddoXQiPxGgGMLD456UVnouwIL5VKHVGH3EB+TzHOf59vLS0SlcCUfsoTRu4puw+Ldlc4W/6FEhfNv8M2qnqPDTBU8koEJc2cr4lL9WrnWBf7jVvUsbWupxheAl8zif6AK4eQLIFhH+JdWne2Sx0NCHqNz6bZYNK/AIdydT4LoYFRYjkAH6i821/DwMDq9nqTmVwz9x0InUbMTzgtYRXXUNodealyqAZANQsRdGyKnjbRlneXlT7DSTRIIYFyFVCX2hs2p+z2jfc8ywuegc9zkINtWOFUzl4Rsp0+1mltnyhLB8obo2qgxO1Kt8CTJLWnsXfM0RVlHlVZ00DY7o+eXNghQnFsHJcbQ8JwDTTIYE+xK3pdnrf3EKJEQwI0oDaEk/mt4G+VR2O8kmSMzURM10QsQCYdlCquulCUeR9db8/d/vQ+SgsuNsVTouRE6IfuOKbU=
   skip_cleanup: true
@@ -23,7 +27,11 @@ deploy:
   on:
     tags: true
     repo: moonlitdoor/mld-shared-preference-live-data
+- provider: script
+  script: "./gradlew bintrayUpload -Pbintray_username=$bintray_username -Pbintray_api_key=$bintray_api_key"
+#  on:
+#    tags: true
 notifications:
   slack:
     rooms:
-      - secure: Kg0BHkjHSWa18mTv2Y58Q/pNy32RfPqd/SbKO4HgRRnEvN6LG3aw1+7XxLiOXqFTjaeLG5EMkrRfVXEksehjlJT/B/9TRPzOHacp4l1cfzDRnaCfe/KZXBnblbYoXRdNRFEuU0bvMyup/ukUWRlYMofyqTR4iPNeK2qV2plnj1Drj+qJTwivHFV5M0YwvrPoYu3S1PbAlXJZ/X92H3bMutNtAVuh2oiISQJpFKKHTAp9iD9CWMcNmu8VYRNH/wv8emsv4te7Xvwsjb7stFkobRJKm8XdMsfp8jYN8FGnsAB1e71Di8XRdnlBMG++FFqkDYfqNt18PDgwLVX0noKbPp28fD+EiFderznMBY14uYUzmmJB3KSqgUll8SITuNlFT/veEqDLdWjg/rLNtsBUiKGqlVw8wR0zvYN+sResaJxsxfBDNTdqdCY8flGRQXU0sdbQK9HQw7labf54d3A5Pw5rjraweuOk/NpuSdeadKXbI3fEU23qGts4BDhUjP03Q836+cBguaRov9mAAhDdwgDWgD/mKkCH7OuYl0vUuIxwvJUce4M3tApWfw4gvkHJUnH1XmnagwXw2UOny2mtQF6EB7GwXEFxyUQkxel98d0EaduacB8d5n6zxeihvqAE1YEKPL//SVpK7IXwsUnQjfLnbz48yOO1TBZldF9Ww1U=
+    - secure: Kg0BHkjHSWa18mTv2Y58Q/pNy32RfPqd/SbKO4HgRRnEvN6LG3aw1+7XxLiOXqFTjaeLG5EMkrRfVXEksehjlJT/B/9TRPzOHacp4l1cfzDRnaCfe/KZXBnblbYoXRdNRFEuU0bvMyup/ukUWRlYMofyqTR4iPNeK2qV2plnj1Drj+qJTwivHFV5M0YwvrPoYu3S1PbAlXJZ/X92H3bMutNtAVuh2oiISQJpFKKHTAp9iD9CWMcNmu8VYRNH/wv8emsv4te7Xvwsjb7stFkobRJKm8XdMsfp8jYN8FGnsAB1e71Di8XRdnlBMG++FFqkDYfqNt18PDgwLVX0noKbPp28fD+EiFderznMBY14uYUzmmJB3KSqgUll8SITuNlFT/veEqDLdWjg/rLNtsBUiKGqlVw8wR0zvYN+sResaJxsxfBDNTdqdCY8flGRQXU0sdbQK9HQw7labf54d3A5Pw5rjraweuOk/NpuSdeadKXbI3fEU23qGts4BDhUjP03Q836+cBguaRov9mAAhDdwgDWgD/mKkCH7OuYl0vUuIxwvJUce4M3tApWfw4gvkHJUnH1XmnagwXw2UOny2mtQF6EB7GwXEFxyUQkxel98d0EaduacB8d5n6zxeihvqAE1YEKPL//SVpK7IXwsUnQjfLnbz48yOO1TBZldF9Ww1U=

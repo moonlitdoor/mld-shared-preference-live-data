@@ -6,8 +6,9 @@ buildscript {
     }
     dependencies {
         classpath "com.moonlitdoor.git-version:git-version:0.0.8"
-        classpath 'com.android.tools.build:gradle:3.3.0-alpha13'
+        classpath "com.android.tools.build:gradle:3.3.0-alpha13"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.71"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
     }
 }
 

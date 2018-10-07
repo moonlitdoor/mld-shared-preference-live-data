@@ -2,6 +2,7 @@ apply plugin: "com.moonlitdoor.git-version"
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 apply plugin: "maven-publish"
+apply plugin: "com.jfrog.bintray"
 
 project.ext.archivesBaseName = project.name + "-" + gitVersion
 
@@ -27,7 +28,7 @@ android {
 }
 
 repositories {
-  maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+  maven {url "https://oss.sonatype.org/content/repositories/snapshots"}
 }
 
 dependencies {
@@ -50,6 +51,22 @@ publishing {
       artifactId = project.name
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
+    }
+  }
+}
+
+bintray {
+  user = "$bintray_username"
+  key = "$bintray_api_key"
+  publications = ["maven"]
+  pkg {
+    repo = "android"
+    userOrg = "moonlitdoor"
+    name = group
+    licenses = ["MIT"]
+    vcsUrl = "https://github.com/moonlitdoor/mld-shared-preference-live-data"
+    version {
+      name = gitVersion
     }
   }
 }
