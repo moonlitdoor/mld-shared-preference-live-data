@@ -3,6 +3,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 apply plugin: "maven-publish"
 apply plugin: "com.jfrog.bintray"
+apply plugin: "org.jetbrains.dokka"
 
 project.ext.archivesBaseName = project.name + "-" + gitVersion
 
@@ -45,12 +46,34 @@ dependencies {
   androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0-beta01"
 }
 
+dokka {
+  outputFormat = "html"
+  outputDirectory = "${project.projectDir}/build/javadoc"
+}
+
+task sourcesAar(type: Jar) {
+  from android.sourceSets.main.java.srcDirs
+  classifier "sources"
+  version = gitVersion
+  extension = "aar"
+}
+
+task javadocAar(type: Jar) {
+  dependsOn dokka
+  from "${project.projectDir}/build/javadoc"
+  classifier "javadoc"
+  version = gitVersion
+  extension = "aar"
+}
+
 publishing {
   publications {
     maven(MavenPublication) {
       artifactId = project.name
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
+      artifact "build/libs/" + archivesBaseName + "-sources.aar"
+      artifact "build/libs/" + archivesBaseName + "-javadoc.aar"
     }
   }
   repositories {
@@ -75,11 +98,15 @@ bintray {
     githubRepo = "moonlitdoor/mld-shared-preference-live-data"
     version {
       name = gitVersion
+//      gpg {
+//        sign = true //Determines whether to GPG sign the files. The default is false
+//         passphrase = "passphrase" //Optional. The passphrase for GPG signing"
+//      }
 //      mavenCentralSync {
 //        sync = true //[Default: true] Determines whether to sync the version to Maven Central.
-//        user = 'userToken' //OSS user token: mandatory
-//        password = 'paasword' //OSS user password: mandatory
-//        close = '1' //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
+//        user = "userToken" //OSS user token: mandatory
+//        password = "paasword" //OSS user password: mandatory
+//        close = "1" //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
 //      }
     }
   }
