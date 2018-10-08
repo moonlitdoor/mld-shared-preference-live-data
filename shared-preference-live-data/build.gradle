@@ -109,10 +109,9 @@ bintray {
     githubRepo = "moonlitdoor/mld-shared-preference-live-data"
     version {
       name = gitVersion
-//      gpg {
-//        sign = true //Determines whether to GPG sign the files. The default is false
-//         passphrase = "passphrase" //Optional. The passphrase for GPG signing"
-//      }
+      gpg {
+        sign = true
+      }
 //      mavenCentralSync {
 //        sync = true //[Default: true] Determines whether to sync the version to Maven Central.
 //        user = "userToken" //OSS user token: mandatory
