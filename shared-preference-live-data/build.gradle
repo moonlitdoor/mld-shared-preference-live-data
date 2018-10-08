@@ -76,6 +76,22 @@ publishing {
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
       artifact "build/publications/library/pom-default.xml"
+      pom {
+        name = "SharedPreferenceLiveData"
+        description = "An Android library"
+        url = "http://github.com/moonlitdoor/mld-shared-preference-live-data"
+        licenses {
+          license {
+            name = "MIT"
+            url = "https://opensource.org/licenses/MIT"
+          }
+        }
+        scm {
+          connection = "scm:git:git://github.com/moonlitdoor/mld-shared-preference-live-data.git"
+          developerConnection = "scm:git:ssh://github.com/moonlitdoor/mld-shared-preference-live-data.git"
+          url = "http://github.com/moonlitdoor/mld-shared-preference-live-data"
+        }
+      }
     }
     sources(MavenPublication) {
       artifactId = project.name
