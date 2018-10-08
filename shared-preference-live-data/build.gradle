@@ -75,6 +75,7 @@ publishing {
       artifactId = project.name
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
+      artifact "build/publications/library/pom-default.xml"
     }
     sources(MavenPublication) {
       artifactId = project.name
