@@ -114,7 +114,7 @@ bintray {
   key = "$bintray_api_key"
   publications = ["library", "sources", "javadoc"]
   pkg {
-//    publish = true
+    publish = true
     repo = "android"
     userOrg = "moonlitdoor"
     name = group
