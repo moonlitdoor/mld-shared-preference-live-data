@@ -76,6 +76,7 @@ publishing {
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
       artifact "build/publications/library/pom-default.xml"
+      artifact "build/libs/" + archivesBaseName + "-javadoc.jar"
       pom {
         name = "SharedPreferenceLiveData"
         description = "An Android library"
@@ -98,11 +99,6 @@ publishing {
       version = gitVersion
       artifact "build/libs/" + archivesBaseName + "-sources.aar"
     }
-    javadoc(MavenPublication) {
-      artifactId = project.name
-      version = gitVersion
-      artifact "build/libs/" + archivesBaseName + "-javadoc.jar"
-    }
   }
   repositories {
     maven {url = "build/repo"}
@@ -112,7 +108,7 @@ publishing {
 bintray {
   user = "$bintray_username"
   key = "$bintray_api_key"
-  publications = ["library", "sources", "javadoc"]
+  publications = ["library", "sources"]
   pkg {
     publish = true
     repo = "android"
