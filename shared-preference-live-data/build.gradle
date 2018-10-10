@@ -78,6 +78,7 @@ publishing {
       artifact "build/publications/library/pom-default.xml"
       artifact "build/libs/" + archivesBaseName + "-javadoc.jar"
       pom {
+        packaging "aar"
         name = "SharedPreferenceLiveData"
         description = "An Android library"
         url = "http://github.com/moonlitdoor/mld-shared-preference-live-data"
