@@ -62,7 +62,7 @@ task sourcesAar(type: Jar) {
   extension = "aar"
 }
 
-task javadocAar(type: Jar) {
+task javadocJar(type: Jar) {
   dependsOn dokka
   from "${project.projectDir}/build/javadoc"
   classifier "javadoc"
@@ -75,8 +75,8 @@ publishing {
       artifactId = project.name
       version = gitVersion
       artifact "build/outputs/aar/" + archivesBaseName + "-release.aar"
-      artifact "build/publications/library/pom-default.xml"
-      artifact "build/libs/" + archivesBaseName + "-javadoc.jar"
+      artifact sourcesAar
+      artifact javadocJar
       pom {
         packaging "aar"
         name = "SharedPreferenceLiveData"
@@ -95,11 +95,6 @@ publishing {
         }
       }
     }
-    sources(MavenPublication) {
-      artifactId = project.name
-      version = gitVersion
-      artifact "build/libs/" + archivesBaseName + "-sources.aar"
-    }
   }
   repositories {
     maven {url = "build/repo"}
@@ -109,10 +104,10 @@ publishing {
 bintray {
   user = "$bintray_username"
   key = "$bintray_api_key"
-  publications = ["library", "sources"]
+  publications = ["library"]
   pkg {
-    publish = true
-    repo = "android"
+//    publish = true
+    repo = "maven"
     userOrg = "moonlitdoor"
     name = group
     licenses = ["MIT"]

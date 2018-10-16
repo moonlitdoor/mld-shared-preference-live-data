@@ -29,9 +29,9 @@ deploy:
     repo: moonlitdoor/mld-shared-preference-live-data
 - provider: script
   skip_cleanup: true
-  script: "./gradlew generatePomFileForLibraryPublication sourcesAar javadocAar bintrayUpload -Pbintray_username=$bintray_username -Pbintray_api_key=$bintray_api_key"
-  on:
-    tags: true
+  script: "./gradlew generatePomFileForLibraryPublication sourcesJar javadocJar bintrayUpload -Pbintray_username=$bintray_username -Pbintray_api_key=$bintray_api_key"
+#  on:
+#    tags: true
 notifications:
   slack:
     rooms:
