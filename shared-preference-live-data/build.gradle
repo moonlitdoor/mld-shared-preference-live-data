@@ -53,7 +53,7 @@ dependencies {
 }
 
 dokka {
-  outputFormat = "html"
+  outputFormat = "jekyll"
   outputDirectory = "${project.rootDir}/docs"
 }
 

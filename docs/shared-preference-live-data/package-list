@@ -1,4 +1,4 @@
-$dokka.format:html
+$dokka.format:jekyll
 $dokka.linkExtension:html
 $dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
 $dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.Boolean)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
