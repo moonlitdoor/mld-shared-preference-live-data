@@ -3,7 +3,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 apply plugin: "maven-publish"
 apply plugin: "com.jfrog.bintray"
-apply plugin: "org.jetbrains.dokka"
+apply plugin: "org.jetbrains.dokka-android"
 
 project.ext.archivesBaseName = project.name + "-" + gitVersion
 
@@ -47,14 +47,14 @@ dependencies {
   testImplementation "com.android.support.test.espresso:espresso-core:3.1.0-beta01"
   testImplementation "org.robolectric:robolectric:4.0-alpha-4-SNAPSHOT"
 
-  androidTestImplementation "androidx.test:runner:1.1.0-beta01"
-  androidTestImplementation "androidx.test:rules:1.1.0-beta01"
-  androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0-beta01"
+  androidTestImplementation "androidx.test:runner:1.1.0-beta02"
+  androidTestImplementation "androidx.test:rules:1.1.0-beta02"
+  androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0-beta02"
 }
 
 dokka {
   outputFormat = "html"
-  outputDirectory = "${project.projectDir}/build/javadoc"
+  outputDirectory = "${project.rootDir}/docs"
 }
 
 task sourcesAar(type: Jar) {
@@ -66,7 +66,7 @@ task sourcesAar(type: Jar) {
 
 task javadocJar(type: Jar) {
   dependsOn dokka
-  from "${project.projectDir}/build/javadoc"
+  from "${project.rootDir}/docs"
   classifier "javadoc"
   version = gitVersion
 }

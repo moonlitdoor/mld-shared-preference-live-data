@@ -3,36 +3,36 @@ package com.moonlitdoor.shared.preference.live.data
 import android.content.SharedPreferences
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceIntLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String, default: Int) = SharedPreferenceIntLiveData(this, key, default)
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceStringLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String, default: String) = SharedPreferenceStringLiveData(this, key, default)
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceStringNullableLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String) = SharedPreferenceStringNullableLiveData(this, key, null)
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceBooleanLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String, default: Boolean) = SharedPreferenceBooleanLiveData(this, key, default)
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceFloatLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String, default: Float) = SharedPreferenceFloatLiveData(this, key, default)
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceLongLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String, default: Long) = SharedPreferenceLongLiveData(this, key, default)
 
 /**
- * This extension function has no useful javadoc.
+ * Creates a [SharedPreferenceStringSetLiveData] using the given SharedPreferences
  */
 fun SharedPreferences.liveData(key: String, default: Set<String>) = SharedPreferenceStringSetLiveData(this, key, default)

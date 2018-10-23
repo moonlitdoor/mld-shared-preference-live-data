@@ -1,0 +1,10 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.Boolean)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.Float)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.Int)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.Long)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.String)com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+$dokka.location:com.moonlitdoor.shared.preference.live.data$liveData(android.content.SharedPreferences, kotlin.String, kotlin.collections.Set((kotlin.String)))com.moonlitdoor.shared.preference.live.data/android.content.-shared-preferences/live-data.html
+com.moonlitdoor.shared.preference.live.data
