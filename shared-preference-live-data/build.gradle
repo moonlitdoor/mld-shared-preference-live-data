@@ -41,15 +41,15 @@ repositories {
 dependencies {
 
   implementation "androidx.lifecycle:lifecycle-livedata:2.0.0"
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.10"
 
   testImplementation "junit:junit:4.12"
   testImplementation "com.android.support.test.espresso:espresso-core:3.1.0-beta01"
   testImplementation "org.robolectric:robolectric:4.0-alpha-4-SNAPSHOT"
 
-  androidTestImplementation "androidx.test:runner:1.1.0-beta02"
-  androidTestImplementation "androidx.test:rules:1.1.0-beta02"
-  androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0-beta02"
+  androidTestImplementation "androidx.test:runner:1.1.1-alpha01"
+  androidTestImplementation "androidx.test:rules:1.1.1-alpha01"
+  androidTestImplementation "androidx.test.espresso:espresso-core:3.1.1-alpha01"
 }
 
 dokka {
