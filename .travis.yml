@@ -33,6 +33,6 @@ deploy:
   on:
     tags: true
 notifications:
-  slack: "moonlitdoor:$slack_api_key#mld-shared_preference"
-#    on_success: change
-#    on_failure: always
+  slack:
+    rooms:
+      - 'moonlitdoor:$slack_api_key#mld-shared_preference'
